@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npm-run-all --parallel build:server build:client start",
     "start": "npx nodemon --watch src server_build/bundle.js",
+    "build:client": "npx webpack build --config ./webpack.client.js --watch",
     "build:server": "npx webpack build --config ./webpack.server.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,6 +27,7 @@
     "@types/express": "^4.17.14",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "@types/react-helmet": "^6.1.5",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "babel-loader": "^8.2.5",
@@ -32,6 +35,7 @@
     "eslint-plugin-react": "^7.31.8",
     "husky": "^8.0.1",
     "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
     "ts-loader": "^9.4.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
@@ -40,6 +44,8 @@
   "dependencies": {
     "express": "^4.18.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.4.1"
   }
 }
